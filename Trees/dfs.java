@@ -21,7 +21,8 @@ public class dfs {
 
         Scanner sc = new Scanner(System.in);
 
-    Queue<node>q= new LinkedList<>();
+        Stack<node>s1=new Stack<>();
+        Stack<node>s2=new Stack<>();
 
 
 
@@ -39,20 +40,28 @@ public class dfs {
         b.right=e;
         c.right=f;
 
-        q.add(a);
+                    //     1
+                    //    / \
+                    //   2   3
+                    //  / \   \
+                    // 4   5   6
+        s1.push(a);
 
-   while(q.size()!=0)
-   {
-        node temp=q.remove();
+        while(s1.size()!=0)
+        {
+            node root=s1.pop();
+            s2.push(root);
 
-        if(temp.left!=null)
-            q.add(temp.left);
+            if(root.left!=null)
+            s1.push(root.left);
 
-        if(temp.right!=null)
-            q.add(temp.right);
+            if(root.right!=null)
+            s1.push(root.right);
+        }
 
-        list.add(temp.data);
-   }
+        while(!s2.isEmpty())
+        list.add(s2.pop().data);
+
 
     System.out.println(list);
 }
