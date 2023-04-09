@@ -66,6 +66,10 @@ public class level_node {
             solve(root,list,k,level);
 
             System.out.println(list);
+
+            sc.close();
+
+
     }
 
     
