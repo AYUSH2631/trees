@@ -64,11 +64,8 @@ public class level_node {
             int level=0;
 
             solve(root,list,k,level);
-
             System.out.println(list);
-
             sc.close();
-
 
     }
 

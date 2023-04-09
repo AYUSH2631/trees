@@ -1,6 +1,15 @@
-package Trees;
 
 import java.util.*;;
+class node{
+    int data;
+    node left;
+    node right;
+
+    node(int key)
+    {
+        data=key;
+    }
+}
 
 public class height_of_tree {
 
